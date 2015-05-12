@@ -1,4 +1,4 @@
-Dynamic max height plugin for jQuery with CSS animation
+Dynamic max height plugin for jQuery
 ========================================
 
 What is?
@@ -65,4 +65,4 @@ License
 
 Thanks
 -------
-Many thanks to [David Panyella](https://github.com/davidpanyella) and [Òscar Casajuana](https://github.com/elboletaire) for help.
+Many thanks to [David Panyella](https://github.com/davidpanyella) and [Òscar Casajuana](https://github.com/elboletaire) for help and inspiration.
