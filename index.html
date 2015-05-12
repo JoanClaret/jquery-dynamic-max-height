@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dynamic CSS3 max height animation plugin for jQuery by JoanClaret</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Dynamic CSS3 max height animation plugin for jQuery</h1>
+      <h2 class="project-tagline">CSS3, plugin, jquery, max-height, animate</h2>
+      <a href="https://github.com/JoanClaret/dynamicmaxheight" class="btn">View on GitHub</a>
+      <a href="https://github.com/JoanClaret/dynamicmaxheight/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/JoanClaret/dynamicmaxheight/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="dynamic-max-height-plugin-for-jquery" class="anchor" href="#dynamic-max-height-plugin-for-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dynamic max height plugin for jQuery</h1>
+
+<h2>
+<a id="what-is" class="anchor" href="#what-is" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is?</h2>
+
+<p>This is a jQuery plugin to dynamically check a layer height and compare it to a custom height value.
+If layer height is higher than that custom value (data-maxheight), a "show more" button and a bottom gradient will appear.</p>
+
+<p>It works with CSS3 transition to get a smooth animation.</p>
+
+<h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works?</h2>
+
+<h3>
+<a id="javascript-initialization" class="anchor" href="#javascript-initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascript initialization</h3>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>.dynamic-max-height<span class="pl-pds">'</span></span>).dynamicMaxHeight(
+    { trigger <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.dynamic-show-more<span class="pl-pds">'</span></span>}
+);</pre></div>
+
+<h3>
+<a id="layout" class="anchor" href="#layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Layout</h3>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-max-height<span class="pl-pds">"</span></span> <span class="pl-e">data-maxheight</span>=<span class="pl-s"><span class="pl-pds">"</span>70<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-wrap<span class="pl-pds">"</span></span>&gt;
+      &lt;p&gt; My life fades. The vision dims. All that remains are memories. I remember a time of chaos... ruined dreams... this wasted land. But most of all, I remember The Road Warrior. The man we called "Max." To understand who he was, you have to go back to another time... when the world was powered by the black fuel... and the desert sprouted great cities of pipe and steel. Gone now... swept away. For reasons long forgotten, two mighty warrior tribes went to war, and touched off a blaze which engulfed them all. Without fuel they were nothing. They'd built a house of straw. The thundering machines sputtered and stopped. Their leaders talked and talked and talked. But nothing could stem the avalanche. Their world crumbled. The cities exploded. A whirlwind of looting, a firestorm of fear. Men began to feed on men. On the roads it was a white line nightmare. Only those mobile enough to scavenge, brutal enough to pillage would survive. The gangs took over the highways, ready to wage war for a tank of juice. And in this maelstrom of decay, ordinary men were battered and smashed... men like Max... the warrior Max. In the roar of an engine, he lost everything... and became a shell of a man... a burnt-out, desolate man, a man haunted by the demons of his past, a man who wandered out into the wasteland. And it was here, in this blighted place, that he learned to live again.&lt;/p&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-show-more<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:void(0);<span class="pl-pds">"</span></span> <span class="pl-e">title</span>=<span class="pl-s"><span class="pl-pds">"</span>Read more<span class="pl-pds">"</span></span> <span class="pl-e">data-replace-text</span>=<span class="pl-s"><span class="pl-pds">"</span>Show less<span class="pl-pds">"</span></span>&gt;Read more&lt;/<span class="pl-ent">a</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<ul>
+<li>Change "data-maxheight" in each item to set a different max height value</li>
+<li>Change "trigger" value in the javascript initialization to set a custom "Show more / show less" button trigger</li>
+<li>Change "data-replace-text" to set a new text once the button is clicked</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2015 Joan Claret
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+
+<h2>
+<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thanks</h2>
+
+<p>Many thanks to <a href="https://github.com/davidpanyella">David Panyella</a> and <a href="https://github.com/elboletaire">Òscar Casajuana</a> for help and inspiration.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/JoanClaret/dynamicmaxheight">Dynamic CSS3 max height animation plugin for jQuery</a> is maintained by <a href="https://github.com/JoanClaret">JoanClaret</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
