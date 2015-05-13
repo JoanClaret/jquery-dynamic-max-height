@@ -1,6 +1,10 @@
 body{
     font-family: 'sans-serif',Arial;
     line-height:1.5em;
+    padding:20px;
+}
+a{
+  color:#3498db;
 }
 
 * {
