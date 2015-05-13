@@ -8,6 +8,9 @@ If layer height is higher than that custom value (data-maxheight), a "show more"
 
 It works with CSS3 transition to get a smooth animation.
 
+Online demo
+-----------
+[Visit plugin website](http://joanclaret.github.io/dynamicmaxheight)
 
 How it works?
 -----------
