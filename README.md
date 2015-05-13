@@ -1,5 +1,6 @@
 Dynamic max height plugin for jQuery
 ========================================
+...or how to animate to an unknow height with CSS and jQuery
 
 What is?
 -----------
