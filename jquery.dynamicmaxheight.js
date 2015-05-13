@@ -28,9 +28,6 @@
  * THE SOFTWARE.
  */
 
-// -------------------------------------------------
-//       Show / hide layer with height control active
-// -------------------------------------------------
 ;(function($) {
 
     var dynamicMaxHeight = function(options) {
