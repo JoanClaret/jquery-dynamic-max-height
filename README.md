@@ -11,7 +11,7 @@ It works with CSS3 transition to get a smooth animation.
 
 Online demo
 -----------
-[Visit plugin website](http://joanclaret.github.io/dynamicmaxheight)
+[Visit plugin website](http://joanclaret.github.io/jquery-dynamic-max-height)
 
 How it works?
 -----------
