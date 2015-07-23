@@ -72,7 +72,8 @@ Thanks
 Many thanks to [David Panyella](https://github.com/davidpanyella) and [Òscar Casajuana](https://github.com/elboletaire) for help and inspiration.
 
 
-### Other useful  plugins
+Other useful  plugins
+---------------------
 * [jcSlider](http://joanclaret.github.io/jcSlider): A responsive slider jQuery plugin with CSS animations 
 * [html5 canvas animation](http://joanclaret.github.io/html5-canvas-animation): 3D lines animation with three.js 
 * [slide and swipe menu](http://joanclaret.github.io/slide-and-swipe-menu): A sliding swipe menu that works with touchSwipe library. 
