@@ -19,9 +19,11 @@ How it works?
 ### Javascript initialization
 
 ```javascript
-$('.dynamic-max-height').dynamicMaxHeight(
-    { trigger : '.dynamic-show-more'}
-);
+$(function(){
+    $('.dynamic-max-height').dynamicMaxHeight(
+        { trigger : '.dynamic-show-more'}
+    );
+});
 ```
 
 ### Layout
