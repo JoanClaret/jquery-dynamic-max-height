@@ -4,25 +4,10 @@ This is a jQuery plugin to dynamically check a layer height and compare it to a 
 
 [![Preview](http://joanclaret.github.io/jquery-dynamic-max-height/img/github-cover.png)](http://joanclaret.github.io/jquery-dynamic-max-height/)
 
-- Configure max-height via data attribute
-```html
- data-maxheight="150"
-```
-
-- Button appears only in if item-height > max-height
-```html
- class="js-dynamic-show-hide" 
-```
-
+- Configure `max-height` via data attribute
+- Button appears only in if `item-height` > `max-height`
 - Configure "show more / show less" messages via data attributes
-```html
- title="Show more" data-replace-text="Show less"
-```
-
 - Animate via CSS transitions (best performance)
-```html
- transition: max-height 0.25s ease-in-out;
-```
 
 Online demo
 -----------
