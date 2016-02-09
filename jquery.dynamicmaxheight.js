@@ -28,91 +28,86 @@
  * THE SOFTWARE.
  */
 
-;(function($) {
 
-    var dynamicMaxHeight = function(options) {
+;(function($, document, window, undefined) {
 
-        /**
-         * Check if target layer height is higher than max height
-         *
-         */
+  'use strict';
+  
+  var dynamicMaxHeight = 
 
-        var heightControl = (function(selector){
+    $.fn.dynamicMaxHeight = function(selector) {
+
+        // Define variable classes
+        var dynamicHeightWrapperClass = 'dynamic-height-wrap',
+            dynamicHeightActiveClass = 'dynamic-height-active',
+            dynamicHeightButtonClass = 'js-dynamic-show-hide'
+        ;
+
+        return this.each(function(i, selector) {
             
-            $this = $(selector);
-            $this.each(function(i, selector) {
+            /**
+             * Init plugin. Get max height and layer height
+             */
+            var el = $(selector),
+                itemMaxHeight = el.data('maxheight'),
+                itemHeight = el.find('.'+dynamicHeightWrapperClass).outerHeight(),
+                itemButton = el.find('.'+dynamicHeightButtonClass)
+            ;
 
-                var maxItemHeight = $this.data('maxheight');
-                var itemHeight = $this.find('.dynamic-wrap').outerHeight(); // get item height
+            el.attr("data-itemheight", itemHeight ); // store layer height as a data attribute
 
-                $this.attr("data-itemheight", itemHeight ); // store itemheight as attribute
+            
+            /**
+             * Apply max height if necessary
+             */
+            if (itemHeight > itemMaxHeight){
+                updateHeight(el, itemMaxHeight);
+                el.toggleClass(dynamicHeightActiveClass);
+                showDynamicMaxHeightButton(el, itemButton);
+            } 
 
-                if (itemHeight > maxItemHeight){
-                   $this.addClass('height-active');
-                   $this.find('.dynamic-wrap').css('max-height', maxItemHeight);
-                   $this.find(options.trigger).css('display','inline-block'); // display "show more" button 
-                }
-
-            });
-
-        }); 
-
-        /**
-         * Show more / show less funcionality
-         *
-         */
-
-        var showMoreShowLess = (function(selector, targetDiv){
-
-            $(selector).each(function() {
-
-                var $this = $(this); // clicked element
-                var $targetDiv = $this.closest(targetDiv); // target div
-
-                var originalText = $this.attr( 'title' ); // get original button text
-                var replaceText;
-
-                if($this.data('replace-text')){
-                    replaceText = $this.data('replace-text');
+            /**
+             * Setup "show more / show less" button
+             */
+            itemButton.click(function(){
+                if(el.hasClass(dynamicHeightActiveClass)){
+                   updateHeight(el, itemHeight);
                 }
                 else{
-                    replaceText = "show less";
+                    updateHeight(el, itemMaxHeight);
                 }
-                $this.click(function(e){
-
-                    var itemHeight = $targetDiv.data('itemheight');    // get original height
-                    var maxItemHeight = $targetDiv.data('maxheight');  // get max height
-                    
-                    if ($targetDiv.hasClass('height-active')) {
-                        // height control disabled
-                        $this.html(replaceText);
-                        $targetDiv.find('.dynamic-wrap').css('max-height', itemHeight);
-                    }
-                    else{
-                        // height control enabled
-                        $this.html(originalText);
-                        $targetDiv.find('.dynamic-wrap').css('max-height', maxItemHeight);
-                    }
-                    $targetDiv.toggleClass('height-active');
-                    e.preventDefault();
-                }); 
-            });
-        }); 
-        return{
-            heightControl: heightControl,
-            showMoreShowLess: showMoreShowLess
-        };
-    };
-    
-    $.fn.dynamicMaxHeight = function(options) {
-
-        var dynamic = dynamicMaxHeight(options);
-
-        return this.each(function() {
-            dynamic.heightControl($(this), options);
-            dynamic.showMoreShowLess(options.trigger, $(this));
-            
+                updateTextButton(el, itemButton);
+                el.toggleClass(dynamicHeightActiveClass);                
+            }); 
         });
+
+        function updateTextButton(el, itemButton){
+            var buttonText;
+            if(el.hasClass(dynamicHeightActiveClass)){
+                buttonText = itemButton.data( 'replace-text' );
+            }
+            else{
+                buttonText = itemButton.attr( 'title' );
+            }
+            itemButton.text(buttonText);
+        }
+
+        function updateHeight(el, height){
+            el.find('.'+dynamicHeightWrapperClass).css('max-height', height);
+        }
+
+        function showDynamicMaxHeightButton(el, itemButton){
+            itemButton.css('display','inline-block');
+        }
     };
+})(window.jQuery || window.$, document, window);
+
+$('.js-dynamic-height').dynamicMaxHeight();
     
-})(window.jQuery);
+    
+/**
+ * Export as a CommonJS module
+ */
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = dynamicMaxHeight;
+}

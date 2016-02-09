@@ -9,40 +9,82 @@ If layer height is higher than that custom value (data-maxheight), a "show more"
 
 It works with CSS3 transition to get a smooth animation.
 
+
 Online demo
 -----------
-[Visit plugin website](http://joanclaret.github.io/jquery-dynamic-max-height)
+[DEMO](http://joanclaret.github.io/dynamicmaxheight)
 
-How it works?
+How to use?
 -----------
 
-### Javascript initialization
-
-```javascript
-$(function(){
-    $('.dynamic-max-height').dynamicMaxHeight(
-        { trigger : '.dynamic-show-more'}
-    );
-});
-```
-
-### Layout
+### Javascript
+Include the dinamycmaxheight.min.js before your </body> tag and initialise it:
 
 ```html
-<div class="dynamic-max-height" data-maxheight="70">
-    <div class="dynamic-wrap">
-      <p> My life fades. The vision dims. All that remains are memories. I remember a time of chaos... ruined dreams... this wasted land. But most of all, I remember The Road Warrior. The man we called "Max." To understand who he was, you have to go back to another time... when the world was powered by the black fuel... and the desert sprouted great cities of pipe and steel. Gone now... swept away. For reasons long forgotten, two mighty warrior tribes went to war, and touched off a blaze which engulfed them all. Without fuel they were nothing. They'd built a house of straw. The thundering machines sputtered and stopped. Their leaders talked and talked and talked. But nothing could stem the avalanche. Their world crumbled. The cities exploded. A whirlwind of looting, a firestorm of fear. Men began to feed on men. On the roads it was a white line nightmare. Only those mobile enough to scavenge, brutal enough to pillage would survive. The gangs took over the highways, ready to wage war for a tank of juice. And in this maelstrom of decay, ordinary men were battered and smashed... men like Max... the warrior Max. In the roar of an engine, he lost everything... and became a shell of a man... a burnt-out, desolate man, a man haunted by the demons of his past, a man who wandered out into the wasteland. And it was here, in this blighted place, that he learned to live again.</p>
+ <script src="path/to/file/jquery.dynamicmaxheight.js"></script>
+
+ <script>
+    $('.dynamic-max-height').dynamicMaxHeight();
+ </script>
+```
+
+
+### HTML
+The plugin depends on the following HTML structure:
+
+```html
+<div class="js-dynamic-height" data-maxheight="70">
+    <div class="dynamic-height-wrap">
+      <p> My life fades. The vision dims. All that remains are memories. I remember a time of chaos... ruined dreams... this wasted land. But most of all, I remember The Road Warrior. The man we called "Max." To understand who he was, you have to go back to another time... when the world was powered by the black fuel... and the desert sprouted great cities of pipe and steel. Gone now... swept away. For reasons long forgotten, two mighty warrior tribes went to war, and touched off a blaze which engulfed them all. Without fuel they were nothing. They'd built a house of straw. The thundering machines sputtered and stopped. Their leaders talked and talked and talked. But nothing could stem the avalanche. Their world crumbled. </p>
     </div>
-    <a class="dynamic-show-more" href="javascript:void(0);" title="Read more" data-replace-text="Show less">Read more</a>
+    <button class="js-dynamic-show-hide button" title="Show more" data-replace-text="Show less">Show more</button>
 </div>
+```
+
+### CSS
+Minimal CSS Rules for the plugin:
+
+```css
+.dynamic-height-wrap {
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.25s ease-in-out;
+  width: 100%;
+}
+
+/* Bottom gradient (optional, but recommended)*/
+.dynamic-height-active .dynamic-height-wrap:before {
+  background: linear-gradient(to bottom,  rgba(240,249,255,0) 0%,rgba(255,255,255,1) 100%);
+  bottom: 0;
+  content:'';
+  height: 30px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.dynamic-height-active .dynamic-show-more {
+  display: inline-block;
+}
+
+.dynamic-show-more {
+  display: none;
+}
 ```
 
 ### Options
 
-* Change "data-maxheight" in each item to set a different max height value
-* Change "trigger" value in the javascript initialization to set a custom "Show more / show less" button trigger
-* Change "data-replace-text" to set a new text once the button is clicked
+| Value|Description|
+| ------- |:---------------------:|
+| **data-maxheight** | Change "data-maxheight" in each item to set a different max height value |
+| ------- |:---------------------:|
+| **data-replace-text** | Change "data-maxheight" in each button to set a custom "show less" message |
 
+
+VanillaJS version
+------
+Looking for a VanillaJS verion? Check out [pinceladasdaweb](https://github.com/pinceladasdaweb/DynamicMaxHeight)'s DynamicMaxHeight in pure Javascript.
 
 License
 -------
