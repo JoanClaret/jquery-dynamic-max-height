@@ -1,14 +1,28 @@
 Dynamic max height plugin for jQuery
 ========================================
-...or how to animate to an unknow height with CSS and jQuery
-
-What is?
------------
 This is a jQuery plugin to dynamically check a layer height and compare it to a custom height value.
-If layer height is higher than that custom value (data-maxheight), a "show more" button and a bottom gradient will appear.
 
-It works with CSS3 transition to get a smooth animation.
+[![Preview](http://joanclaret.github.io/jquery-dynamic-max-height/img/github-cover.png)](http://joanclaret.github.io/jquery-dynamic-max-height/)
 
+- Configure max-height via data attribute
+```html
+ data-maxheight="150"
+```
+
+- Button appears only in if item-height > max-height
+```html
+ class="js-dynamic-show-hide" 
+```
+
+- Configure "show more / show less" messages via data attributes
+```html
+ title="Show more" data-replace-text="Show less"
+```
+
+- Animate via CSS transitions (best performance)
+```html
+ transition: max-height 0.25s ease-in-out;
+```
 
 Online demo
 -----------
