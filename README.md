@@ -78,7 +78,6 @@ Minimal CSS Rules for the plugin:
 | Value|Description|
 | ------- |:---------------------:|
 | **data-maxheight** | Change "data-maxheight" in each item to set a different max height value |
-| ------- |:---------------------:|
 | **data-replace-text** | Change "data-maxheight" in each button to set a custom "show less" message |
 
 
