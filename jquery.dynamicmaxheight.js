@@ -102,8 +102,6 @@
     };
 })(window.jQuery || window.$, document, window);
 
-$('.js-dynamic-height').dynamicMaxHeight();
-    
     
 /**
  * Export as a CommonJS module
