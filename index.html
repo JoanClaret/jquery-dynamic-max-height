@@ -1,111 +1,59 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Dynamic CSS3 max height animation plugin for jQuery by JoanClaret</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Dynamic CSS3 max height animation plugin for jQuery</h1>
-      <h2 class="project-tagline">...or how to animate to an unknow height with CSS and jQuery</h2>
-      <a href="https://github.com/JoanClaret/jquery-dynamic-max-height" class="btn">View on GitHub</a>
-      <a href="https://github.com/JoanClaret/jquery-dynamic-max-height/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/JoanClaret/jquery-dynamic-max-height/tarball/master" class="btn">Download .tar.gz</a>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dynamic max height plugin for jQuery</title>
+        <meta name="description" content="">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       
+    <h1>Dynamic max height plugin for jQuery <span>with a CSS animation</span></h1>
+    <section class="section js-dynamic-height" data-maxheight="100" >   
+        <div class="dynamic-height-wrap">
+            <p>
+                My life fades. The vision dims. All that remains are memories. I remember a time of chaos... ruined dreams... this wasted land. But most of all, I remember The Road Warrior. The man we called "Max." To understand who he was, you have to go back to another time... when the world was powered by the black fuel... and the desert sprouted great cities of pipe and steel. Gone now... swept away. For reasons long forgotten, two mighty warrior tribes went to war, and touched off a blaze which engulfed them all. Without fuel they were nothing. They'd built a house of straw. The thundering machines sputtered and stopped. Their leaders talked and talked and talked. But nothing could stem the avalanche. Their world crumbled. The cities exploded. A whirlwind of looting, a firestorm of fear. Men began to feed on men. On the roads it was a white line nightmare.
+            </p>
+        </div>
+        <button class="js-dynamic-show-hide button" title="Show more" data-replace-text="Show less">Show more</button>
     </section>
+   
+    <ul>
+        <li>
+            <strong>Configure max height via data attribute</strong>
+            <pre>data-maxheight="150"</pre>   
+        </li>
+        <li>
+            <strong>Button appears only in if item height > max height</strong>
+            <pre>class="js-dynamic-show-hide" </pre>
+        </li>
+        <li>
+            <strong>Configure "show more / show less" messages via data attributes</strong>
+            <pre>title="Show more" data-replace-text="Show less"</pre>
+        </li>
+        <li>
+            <strong>Animate via CSS transitions (best performance)</strong>
+            <pre>transition: max-height 0.25s ease-in-out;</pre>
+        </li>
+    </ul>
+    <div class="buttons-wrap">
+        <a class="button" href="https://github.com/JoanClaret/jquery-dynamic-max-height" title="View on github">View on github</a>
+        <a class="button" href="https://github.com/JoanClaret/jquery-dynamic-max-height/archive/master.zip" title="Download">Download</a>
+    </div>
+    <br>
+    <p>Looking for a VanillaJS verion? Check out <a href="https://github.com/pinceladasdaweb/DynamicMaxHeight" title="pinceladasdaweb">pinceladasdaweb</a>'s DynamicMaxHeight in pure Javascript</p>
 
-    <section class="main-content">
-      <h1>
-<a id="dynamic-max-height-plugin-for-jquery" class="anchor" href="#dynamic-max-height-plugin-for-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dynamic max height plugin for jQuery</h1>
+    <a href="https://github.com/JoanClaret/jquery-dynamic-max-height" target="_blank" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#27ae60; color:#ffffff; position: fixed; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
-<p>...or how to animate to an unknow height with CSS and jQuery</p>
 
-<h2>
-<a id="what-is" class="anchor" href="#what-is" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is?</h2>
 
-<p>This is a jQuery plugin to dynamically check a layer height and compare it to a custom height value.
-If layer height is higher than that custom value (data-maxheight), a "show more" button and a bottom gradient will appear.</p>
-
-<p>It works with CSS3 transition to get a smooth animation.</p>
-
-<h2>
-<a id="online-demo" class="anchor" href="#online-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Online demo</h2>
-
-<p><a href="http://joanclaret.github.io/jquery-dynamic-max-height/demo/index.html">DEMO</a></p>
-
-<h2>
-<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works?</h2>
-
-<h3>
-<a id="javascript-initialization" class="anchor" href="#javascript-initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascript initialization</h3>
-
-<div class="highlight highlight-javascript"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>.dynamic-max-height<span class="pl-pds">'</span></span>).dynamicMaxHeight(
-    { trigger <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.dynamic-show-more<span class="pl-pds">'</span></span>}
-);</pre></div>
-
-<h3>
-<a id="layout" class="anchor" href="#layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Layout</h3>
-
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-max-height<span class="pl-pds">"</span></span> <span class="pl-e">data-maxheight</span>=<span class="pl-s"><span class="pl-pds">"</span>70<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-wrap<span class="pl-pds">"</span></span>&gt;
-      &lt;p&gt; My life fades. The vision dims. All that remains are memories. I remember a time of chaos... ruined dreams... this wasted land. But most of all, I remember The Road Warrior. The man we called "Max." To understand who he was, you have to go back to another time... when the world was powered by the black fuel... and the desert sprouted great cities of pipe and steel. Gone now... swept away. For reasons long forgotten, two mighty warrior tribes went to war, and touched off a blaze which engulfed them all. Without fuel they were nothing. They'd built a house of straw. The thundering machines sputtered and stopped. Their leaders talked and talked and talked. But nothing could stem the avalanche. Their world crumbled. The cities exploded. A whirlwind of looting, a firestorm of fear. Men began to feed on men. On the roads it was a white line nightmare. Only those mobile enough to scavenge, brutal enough to pillage would survive. The gangs took over the highways, ready to wage war for a tank of juice. And in this maelstrom of decay, ordinary men were battered and smashed... men like Max... the warrior Max. In the roar of an engine, he lost everything... and became a shell of a man... a burnt-out, desolate man, a man haunted by the demons of his past, a man who wandered out into the wasteland. And it was here, in this blighted place, that he learned to live again.&lt;/p&gt;
-    &lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>dynamic-show-more<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:void(0);<span class="pl-pds">"</span></span> <span class="pl-e">title</span>=<span class="pl-s"><span class="pl-pds">"</span>Read more<span class="pl-pds">"</span></span> <span class="pl-e">data-replace-text</span>=<span class="pl-s"><span class="pl-pds">"</span>Show less<span class="pl-pds">"</span></span>&gt;Read more&lt;/<span class="pl-ent">a</span>&gt;
-&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
-
-<h3>
-<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
-
-<ul>
-<li>Change "data-maxheight" in each item to set a different max height value</li>
-<li>Change "trigger" value in the javascript initialization to set a custom "Show more / show less" button trigger</li>
-<li>Change "data-replace-text" to set a new text once the button is clicked</li>
-</ul>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<pre><code>The MIT License (MIT)
-
-Copyright (c) 2015 Joan Claret
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-</code></pre>
-
-<h2>
-<a id="thanks" class="anchor" href="#thanks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thanks</h2>
-
-<p>Many thanks to <a href="https://github.com/davidpanyella">David Panyella</a> and <a href="https://github.com/elboletaire">Òscar Casajuana</a> for help and inspiration.</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/JoanClaret/jquery-dynamic-max-height">Dynamic CSS3 max height animation plugin for jQuery</a> is maintained by <a href="https://github.com/JoanClaret">JoanClaret</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>   
+    <script src="jquery.dynamicmaxheight.js"></script>
+       
+    </body>
 </html>
-
