@@ -18,11 +18,10 @@ How to use?
 -----------
 
 ### Javascript
-Include the dinamycmaxheight.min.js before your </body> tag and initialise it:
+Include the jquery.dynamicmaxheight.min.js before your </body> tag and initialise it:
 
 ```html
- <script src="path/to/file/jquery.dynamicmaxheight.js"></script>
-
+ <script src="path/to/file/jquery.dynamicmaxheight.min"></script>
  <script>
     $('.dynamic-max-height').dynamicMaxHeight();
  </script>
