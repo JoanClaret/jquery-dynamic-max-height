@@ -18,7 +18,7 @@ How to use?
 -----------
 
 ### Javascript
-Include the jquery.dynamicmaxheight.min.js before your </body> tag and initialise it:
+Include the ```jquery.dynamicmaxheight.min.js``` before your ```</body>``` tag and initialise it:
 
 ```html
  <script src="path/to/file/jquery.dynamicmaxheight.min"></script>
